@@ -175,6 +175,7 @@ const Board = () => {
           progressBarData.map((ele) => {
             return (
               <Paper
+                key={ele.id}
                 elevation={5}
                 onDragEnter={
                   dragging && ele.items && !ele.items.length
@@ -187,7 +188,7 @@ const Board = () => {
                     <span> {ele.title}</span>
                     <span> 1 </span>
                   </div>
-                  <div classname={styles.paperAddCardBar}>
+                  <div className={styles.paperAddCardBar}>
                     <Card>
                       <CardActions>
                         <Button size="small">+</Button>
@@ -199,6 +200,7 @@ const Board = () => {
                       ele.items.map((card) => {
                         return (
                           <Cards
+                            key={card.id}
                             handleDragStart={handleDragStart}
                             title={card.title}
                             body={card.body}
